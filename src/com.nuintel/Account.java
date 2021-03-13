@@ -6,6 +6,7 @@ public class Account {
     private String id;
     private String firstName;
     private String lastName;
+    protected boolean isApproved = false;
 
     public String getUsername() {
         return username;
@@ -39,7 +40,6 @@ public class Account {
         this.lastName = lastName;
     }
 
-
     public String getPassword() {
         return password;
     }
@@ -48,6 +48,13 @@ public class Account {
         this.password = password;
     }
 
+    public void register(String firstName, String lastName, String username, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        //TODO encrypt password for database
+        this.password = password;
+    }
 
 
 }
