@@ -3,7 +3,6 @@ package com.nuintel;
 public class Account {
     private String username;
     private String password;
-    private String id;
     private String firstName;
     private String lastName;
     protected boolean isApproved = false;
@@ -14,14 +13,6 @@ public class Account {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -54,6 +45,10 @@ public class Account {
         this.username = username;
         //TODO encrypt password for database
         this.password = password;
+    }
+
+    protected void setApproved() {
+        isApproved = true;
     }
 
 

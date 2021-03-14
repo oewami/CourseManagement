@@ -20,5 +20,29 @@ public class Administrator extends Account{
         pendingInstructors.add(instructor);
     }
 
+    public ArrayList<Student> getPendingStudents() {
+        return pendingStudents;
+    }
+
+    public ArrayList<Instructor> getPendingInstructors() {
+        return pendingInstructors;
+    }
+
+    public void approveAccount(Student student) {
+        student.setApproved();
+        pendingStudents.remove(student);
+        // TODO set id for student
+        // TODO add account to database
+        approvedStudents.add(student);
+    }
+
+    public void approveAccount(Instructor instructor) {
+        instructor.setApproved();
+        pendingInstructors.remove(instructor);
+        // TODO set id for instructor
+        // TODO add account to database
+        approvedInstructors.add(instructor);
+    }
+
 
 }
